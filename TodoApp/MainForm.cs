@@ -52,6 +52,7 @@ namespace TodoApp
         }
 
         #region Panel Menu
+
         #region btnAll_Click()
         private void btnAll_Click(object sender, EventArgs e)
         {
@@ -79,9 +80,16 @@ namespace TodoApp
             ActivateButton(sender);
         }
         #endregion
-        #endregion
 
         #endregion
 
+        #endregion
+        #region btnNew_Click()
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            EditForm form = new EditForm();
+            form.ShowDialog();
+        }
+        #endregion
     }
 }
