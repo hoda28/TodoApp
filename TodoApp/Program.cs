@@ -17,16 +17,22 @@ namespace TodoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-
             string server = "localhost";
             string port = "5432";
             string username = "postgres";
-            string password = "postgresql";
-            string database = "dvdrental";
+            string password = "checkups";
+            string database = "postgres";
 
             //接続文字列の作成
             string connectionText = $"Server={server};Port={port};Username={username};Password={password};Database={database}";
+            using (var connection = new NpgsqlConnection(connectionText))
+            {
+                connection.Open();
+            }
+
+            Application.Run(new MainForm());
+
+
         }
     }
 
